@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+
+:root {
+    --primary-color: #FFFFFF;
+    --secondary-color: #ACC435;
+    --tertairy-color: #325B30;
+    --quaternary-color: #E4EABD;
+
+    --shadow-color: #000000;
+}
+
+h1 {
+    font-size: x-large;
+    font-family: 'Michroma', sans-serif;
+	font-weight: normal;
+    color: var(--tertairy-color);
+}
