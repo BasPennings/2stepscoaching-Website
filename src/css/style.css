@@ -66,7 +66,7 @@ header {
 }
 
 .btn {
-    color: var(--light-green);
+    color: var(--white);
     background-color: var(--green);
     padding: 5px 20px;
     border-radius: 1000px;
@@ -75,11 +75,14 @@ header {
     transition: all 0.2s;
 }
 
-.btn:hover { background-color: var(--dark-green); }
+.btn:hover { 
+    color: var(--green);
+    background-color: var(--light-green); 
+}
 
 .hamburger { display: none; }
 
-.bar {
+.hamburger__bar {
     height: 2px;
     width: 27px;
     background-color: var(--dark-green);
@@ -89,21 +92,20 @@ header {
 }
 
 
-
-/* .hero {
+.hero {
     background-image: url('../images/background.jpg');
     height: 50vh;
-} */
+}
 
 /* FOR JAVASCRIPT */
 
 .nav--open { transform: translateX(0) !important; }
 
-.hamburger--open .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger--open .hamburger__bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 
-.hamburger--open .bar:nth-child(2) { opacity: 0; }
+.hamburger--open .hamburger__bar:nth-child(2) { opacity: 0; }
 
-.hamburger--open .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.hamburger--open .hamburger__bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* MEDIA QUERIES */
 
