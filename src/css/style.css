@@ -18,11 +18,10 @@
 h1, h2, h3, h4, p, a {
     font-family: 'Michroma', sans-serif;
 	font-weight: normal;
-    font-size: normal;
     color: var(--dark-green);
 }
 
-h1 { font-size: 50px; }
+h1 { font-size: 60px; }
 h2 { font-size: x-large; }
 h3 { font-size: larger; }
 h4 { font-size: large;}
@@ -30,21 +29,41 @@ h5 { font-size: medium; }
 a { text-decoration: none; }
 
 .btn {
+    position: relative;
     color: var(--white);
     background-color: var(--green);
-    padding: 15px 21px;
+    padding: 12px 18px;
+    border: solid var(--green) 3px;
     border-radius: 7px;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: bold;
     transition: all 0.2s;
+    z-index: 7;
 }
 
-.btn:hover { 
-    color: var(--green);
-    background-color: var(--light-green); 
+.btn__filter {
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    width: 0;
+    height: calc(100% + 6px);
+    border-radius: 7px;
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out; 
+    z-index: 5;
 }
+
+.btn--bordered {
+    border: solid var(--green) 3px;
+    background-color: transparent;
+}
+
+.btn--bordered .btn__filter { background-color: rgba(172, 196, 53, 0.15); }
 
 .btn i { margin-left: 7px; }
+
+.btn:hover .btn__filter { width: calc(100% + 6px); }
+.btn--bordered:hover { color: var(--green); }
 
 /* NORMAL STYLES */
 
@@ -118,8 +137,8 @@ header {
     transition: all 0.3s ease-in-out;
 }
 
-.active .nav__link { color: var(--green); }
-.active .nav__bar { width: 100%; }
+.nav__wrapper--active .nav__link { color: var(--green); }
+.nav__wrapper--active .nav__bar { width: 100%; }
 
 .nav .btn { margin-left: 50px; }
 
@@ -151,7 +170,7 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.5), transparent);
     z-index: 1;
 }
 
@@ -162,6 +181,7 @@ header {
 
 .hero__content {
     width: 50%;
+    margin-left: 200px;
 }
 
 .hero__heading {
@@ -171,7 +191,12 @@ header {
 
 .hero__text {
     color: var(--white);
+    width: 70%;
+    margin: 30px 0;
 }
+
+.hero .btn { display: inline-block; }
+.hero .btn--bordered { margin-left: 30px; }
 
 /* FOR JAVASCRIPT */
 
