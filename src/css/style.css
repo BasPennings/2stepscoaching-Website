@@ -11,7 +11,11 @@
     --background-color: #FFFFFF;
     --text-color: var(--secondary-color);
     --link-hover-color: var(--primary-color);
-    --overlay-color: rgba(0, 0, 0, 0.1);
+
+    --button-base-text-color: var(--background-color);
+    --button-bordered-text-color: var(--primary-color);
+    --button-base-background-color: var(--primary-color);
+    --button-overlay-color: rgba(0, 0, 0, 0.1);
 
     /* Typography */
     --font-family-base: 'Michroma', sans-serif;
@@ -27,7 +31,7 @@
     --border-thickness: 3px;
 
     /* Transitions */
-    --transition-button: width .3s ease-in-out;
+    --transition-button: all .3s ease-in-out;
     --transition-hover-effect: all .3s ease-in-out;
     --transition-hamburger-bar: all 0.3s ease-in-out;
     --transition-nav: transform 0.3s ease-in-out;
@@ -49,8 +53,8 @@
 
     /* padding: 15px 21px; */
     /* 18px 24px */
-    --button-padding-base-vertical: 18px;
-    --button-padding-base-horizontal: 24px;
+    --button-padding-base-vertical: 15px;
+    --button-padding-base-horizontal: 21px;
 
     --button-padding-base: 
         var(--button-padding-base-vertical) 
@@ -63,10 +67,6 @@
 * {
     margin: 0;
     padding: 0;
-}
-
-body {
-    height: 300vh;
 }
 
 h1, h2, h3, h4, p, a {
@@ -83,7 +83,7 @@ a { text-decoration: none; }
     position: relative;
     padding: var(--button-padding-base);
     border-radius: var(--border-radius);
-    background-color: var(--primary-color);
+    background-color: var(--button-base-background-color);
     user-select: none;
     text-align: center;
     z-index: var(--z-index-button-background);
@@ -97,7 +97,7 @@ a { text-decoration: none; }
     width: 0;
     height: 100%;
     border-radius: var(--border-radius);
-    background-color: var(--overlay-color);
+    background-color: var(--button-overlay-color);
     z-index: var(--z-index-button-overlay);
     transition: var(--transition-button);
 }
@@ -108,15 +108,28 @@ a { text-decoration: none; }
     position: relative;
     font-weight: bold;
     text-transform: uppercase;
-    color: var(--background-color);
+    color: var(--button-base-text-color);
     z-index: var(--z-index-button-text);
+    transition: var(--transition-button);
 }
+
+.btn__icon { margin-left: 10px; }
+
+.btn--bordered { 
+    padding: var(--button-padding-bordered);
+    background-color: transparent;
+    border: var(--border-thickness) solid var(--button-base-background-color);
+}
+
+.btn--bordered:hover::after { width: 0; }
+
+.btn--bordered:hover .btn__text { color: var(--button-bordered-text-color); }
 
 /* NORMAL STYLES */
 
 header {
-    position: sticky;
-    top: 0;
+    /* position: sticky; */
+    /* top: 0; */
     height: var(--header-height);
     background-color: var(--background-color);
     z-index: var(--z-index-header);
@@ -193,13 +206,12 @@ nav { height: 100%; }
 
 .hero {
     position: relative;
-    width: 100%;
-    height: calc(100vh - var(--header-height));
-    background-image: url("../images/background.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
     display: flex;
     align-items: center;
+    height: calc(100vh - var(--header-height));
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     z-index: var(--z-index-base-background);
 }
 
