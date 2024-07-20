@@ -2,11 +2,9 @@
 "2 steps coaching loopt naast je"
 
 ## De basis
-Coachen en wandelen zijn de twee basisstappen waaruit 2 steps coaching werkt. Fysiek bezig zijn in de natuur en gelijktijdig samen in gesprek gaan over allerlei zaken die jou bezig houden Waarbij je wel wat steun kunt gebruiken. Je wordt gestimuleerd om de regie over jouw leven te nemen, de richting te bepalen en het tempo aan te geven. 
+Coachen en wandelen zijn de twee basisstappen waaruit 2 steps coaching werkt. Fysiek bezig zijn in de natuur en gelijktijdig samen in gesprek gaan over allerlei zaken waarbij je wel wat steun kunt gebruiken. Je wordt gestimuleerd om de regie over jouw leven te nemen, de richting te bepalen en het tempo aan te geven. 
 
-Hulpvragen kunnen erg divers zijn. De werkwijze van 2 steps coaching is erop gebaseerd dat niemand hetzelfde is en er daardoor ook geen standaard programma kan bestaan dat voor iedereen even effectief is. 
-
-Het belangrijkste is dat er eerst wordt geluisterd naar wat jij te vertellen hebt, waar je tegenaan loopt. Daarna wordt bepaald waar de behoefte ligt en hoe 2 steps coaching je hierbij kan ondersteunen. De kernwaarde daarbij is “de regie in eigen hand”, wat betekent dat je wordt begeleid, ondersteund en geadviseerd terwijl jij leert om de regie van jouw ontwikkelproces in eigen handen te nemen.
+De werkwijze van 2 steps coaching is erop gebaseerd dat niemand hetzelfde is en er daardoor ook geen standaard programma kan bestaan dat voor iedereen even effectief is. Er word geluisterd naar waar je tegenaan loopt en hoe 2 steps coaching je hierbij kan ondersteunen. Je wordt begeleid, ondersteund en geadviseerd terwijl jij leert om de regie van jouw ontwikkelproces in eigen handen te nemen.
 
 ## Visie
 Bij 2 steps coaching wordt coaching op maat aangeboden. De kernwaarde van 2 steps coaching is “de regie in eigen hand”.
