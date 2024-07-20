@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
 
-/* BASE STYLES */
+/* DEFAULT STYLES */
 
 :root {
     /* Colors */
@@ -12,14 +12,14 @@
     --text-color: var(--secondary-color);
     --link-hover-color: var(--primary-color);
 
-    --button-base-text-color: var(--background-color);
+    --button-default-text-color: var(--background-color);
     --button-bordered-text-color: var(--primary-color);
-    --button-base-background-color: var(--primary-color);
+    --button-default-background-color: var(--primary-color);
     --button-overlay-color: rgba(0, 0, 0, 0.1);
 
     /* Typography */
-    --font-family-base: 'Michroma', sans-serif;
-    --font-size-base: normal;
+    --font-family-default: 'Michroma', sans-serif;
+    --font-size-default: normal;
     /* --font-size-large: 24px;
     --font-size-small: 12px; */
     --font-size-heading: 60px;
@@ -37,8 +37,8 @@
     --transition-nav: transform 0.3s ease-in-out;
 
     /* Z-Index */
-    --z-index-base-overlay: 1;
-    --z-index-base-foreground: 2;
+    --z-index-default-overlay: 1;
+    --z-index-default-foreground: 2;
     --z-index-header: 500;
     --z-index-button-background: 1000;
     --z-index-button-overlay: 1001;
@@ -48,20 +48,28 @@
 
 
     /* Custom */
-
     --header-height: 90px;
 
-    /* padding: 15px 21px; */
-    /* 18px 24px */
-    --button-padding-base-vertical: 15px;
-    --button-padding-base-horizontal: 21px;
+    --_button-padding-default-vertical: 15px;
+    --_button-padding-default-horizontal: 21px;
+    --_button-padding-small-vertical: 12px;
+    --_button-padding-small-horizontal: 18px;
+    --_button-padding-big-vertical: 18px;
+    --_button-padding-big-horizontal: 24px;
 
-    --button-padding-base: 
-        var(--button-padding-base-vertical) 
-        var(--button-padding-base-horizontal);
-    --button-padding-bordered: 
-        calc(var(--button-padding-base-vertical) - var(--border-thickness))
-        calc(var(--button-padding-base-horizontal) - var(--border-thickness));
+    --button-padding-default: var(--_button-padding-default-vertical) var(--_button-padding-default-horizontal);
+    --button-padding-small: var(--_button-padding-small-vertical) var(--_button-padding-small-horizontal);
+    --button-padding-big: var(--_button-padding-big-vertical) var(--_button-padding-big-horizontal);
+
+    --button-bordered-padding-default: 
+        calc(var(--_button-padding-default-vertical) - var(--border-thickness))
+        calc(var(--_button-padding-default-horizontal) - var(--border-thickness));
+    --button-bordered-padding-small: 
+        calc(var(--_button-padding-small-vertical) - var(--border-thickness))
+        calc(var(--_button-padding-small-horizontal) - var(--border-thickness));
+    --button-bordered-padding-big: 
+        calc(var(--_button-padding-big-vertical) - var(--border-thickness))
+        calc(var(--_button-padding-big-horizontal) - var(--border-thickness));
 }
 
 * {
@@ -70,7 +78,7 @@
 }
 
 h1, h2, h3, h4, p, a {
-    font-family: var(--font-family-base);
+    font-family: var(--font-family-default);
 	font-weight: var(--font-weight-normal);
     color: var(--text-color);
 }
@@ -81,9 +89,9 @@ a { text-decoration: none; }
 
 .btn {
     position: relative;
-    padding: var(--button-padding-base);
+    padding: var(--button-padding-default);
     border-radius: var(--border-radius);
-    background-color: var(--button-base-background-color);
+    background-color: var(--button-default-background-color);
     user-select: none;
     text-align: center;
     z-index: var(--z-index-button-background);
@@ -108,7 +116,7 @@ a { text-decoration: none; }
     position: relative;
     font-weight: bold;
     text-transform: uppercase;
-    color: var(--button-base-text-color);
+    color: var(--button-default-text-color);
     z-index: var(--z-index-button-text);
     transition: var(--transition-button);
 }
@@ -116,14 +124,19 @@ a { text-decoration: none; }
 .btn__icon { margin-left: 10px; }
 
 .btn--bordered { 
-    padding: var(--button-padding-bordered);
+    padding: var(--button-bordered-padding-default);
     background-color: transparent;
-    border: var(--border-thickness) solid var(--button-base-background-color);
+    border: var(--border-thickness) solid var(--button-default-background-color);  
 }
 
 .btn--bordered:hover::after { width: 0; }
 
 .btn--bordered:hover .btn__text { color: var(--button-bordered-text-color); }
+
+.btn--small { padding: var(--button-padding-small) }
+.btn--big { padding: var(--button-padding-big) }
+.btn--bordered.btn--small { padding: var(--button-bordered-padding-small) }
+.btn--bordered.btn--big { padding: var(--button-bordered-padding-big) }
 
 /* NORMAL STYLES */
 
@@ -203,7 +216,6 @@ nav { height: 100%; }
 }
 
 
-
 .hero {
     position: relative;
     display: flex;
@@ -212,7 +224,7 @@ nav { height: 100%; }
     background-image: url("../images/background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    z-index: var(--z-index-base-background);
+    z-index: var(--z-index-default-background);
 }
 
 .hero::before {
@@ -223,17 +235,17 @@ nav { height: 100%; }
     width: 100%;
     height: 100%;
     background: linear-gradient(to right, rgba(0, 0, 0, 0.5), transparent);
-    z-index: var(--z-index-base-overlay);
+    z-index: var(--z-index-default-overlay);
 }
 
 .hero > * {
     position: relative;
-    z-index: var(--z-index-base-foreground);
+    z-index: var(--z-index-default-foreground);
 }
 
 .hero__content {
     width: 50%;
-    margin-left: 200px;
+    margin-left: 175px;
 }
 
 .hero__heading {
@@ -263,15 +275,13 @@ nav { height: 100%; }
 /* MEDIA QUERIES */
 
 @media (max-width: 750px) {  
-    :root {
-        --header-padding-horizontal: 90px;
-    }
+    :root { --_header-padding-horizontal: 90px; }
 
     .btn { padding: 7px 21px; }
 
     header { position: relative; }
 
-    .header-content { padding: 0 var(--header-padding-horizontal); }
+    .header-content { padding: 0 var(--_header-padding-horizontal); }
     
     nav { 
         position: absolute;
@@ -281,7 +291,7 @@ nav { height: 100%; }
         transform: translateX(-100%);
         width: 100%;
         height: auto;
-        padding: 0 var(--header-padding-horizontal) 20px var(--header-padding-horizontal);
+        padding: 0 var(--_header-padding-horizontal) 20px var(--_header-padding-horizontal);
         background-color: var(--background-color);
         transition: var(--transition-nav);
     }
