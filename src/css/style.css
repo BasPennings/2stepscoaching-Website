@@ -19,10 +19,12 @@
 
     /* Typography */
     --font-family-default: 'Michroma', sans-serif;
-    --font-size-default: normal;
-    /* --font-size-large: 24px;
-    --font-size-small: 12px; */
-    --font-size-heading: 60px;
+    --font-size-default: 14px;
+    --font-size-medium: 16px; /* Used in hero section */
+    --font-size-big: 18px; /* Used for normal headings */
+    --font-size-large: 20px; /* Used for bigger headings */
+    --font-size-xl: 30px; /* Used for quotes */
+    --font-size-heading-xxl: 60px; /* Used in hero section */
     --font-weight-default: 400;
     --font-weight-bold: 700;
 
@@ -34,7 +36,7 @@
     --transition-button: all .3s ease-in-out;
     --transition-hover-effect: all .3s ease-in-out;
     --transition-hamburger-bar: all 0.3s ease-in-out;
-    --transition-nav: transform 0.3s ease-in-out;
+    --transition-nav: all 0.3s ease-in-out;
 
     /* Z-Index */
     --z-index-default-overlay: 1;
@@ -80,10 +82,15 @@
 h1, h2, h3, h4, p, a {
     font-family: var(--font-family-default);
 	font-weight: var(--font-weight-default);
+    font-size: var(--font-size-default);
     color: var(--text-color);
 }
 
-h1 { font-size: var(--font-size-heading); }
+h1 { font-size: var(--font-size-heading-xxl); } /* Big headings (hero section) */
+h2 { font-size: var(--font-size-xl);} /* Quotes */
+h3 { font-size: var(--font-size-large); } /* Bigger headings */
+h4 { font-size: var(--font-size-big); } /* Normal headings */
+.paragraph--medium-size { font-size: var(--font-size-medium); }
 
 a { text-decoration: none; }
 
@@ -263,7 +270,15 @@ nav { height: 100%; }
 #hero .btn--bordered { margin-left: 30px; }
 
 #intro {
-    
+
+}
+
+.intro__heading {
+    background-color: var(--background-color);
+}
+
+.intro__text {
+
 }
 
 /* FOR JAVASCRIPT */
