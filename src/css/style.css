@@ -7,22 +7,23 @@
     --primary-color: #ACC435;
     --secondary-color: #325B30;
     --tertiary-color: #E4EABD;
+    --background-color-bright: #FFFFFF;
+    --background-color-dark: rgb(247, 247, 247);;
 
-    --background-color: #FFFFFF;
     --text-color: var(--secondary-color);
     --link-hover-color: var(--primary-color);
 
-    --button-default-text-color: var(--background-color);
+    --button-default-text-color: var(--background-color-bright);
     --button-bordered-text-color: var(--primary-color);
     --button-default-background-color: var(--primary-color);
     --button-overlay-color: rgba(0, 0, 0, 0.1);
 
     /* Typography */
     --font-family-default: 'Michroma', sans-serif;
-    --font-size-default: 14px;
-    --font-size-medium: 16px; /* Used in hero section */
-    --font-size-big: 18px; /* Used for normal headings */
-    --font-size-large: 20px; /* Used for bigger headings */
+    --font-size-default: 15px;
+    --font-size-medium: 17px; /* Used in hero section */
+    --font-size-big: 19px; /* Used for normal headings */
+    --font-size-large: 21px; /* Used for bigger headings */
     --font-size-xl: 30px; /* Used for quotes */
     --font-size-heading-xxl: 60px; /* Used in hero section */
     --font-weight-default: 400;
@@ -148,13 +149,15 @@ a { text-decoration: none; }
 .btn--bordered.btn--small { padding: var(--button-bordered-padding-small) }
 .btn--bordered.btn--big { padding: var(--button-bordered-padding-big) }
 
+section { padding: 30px 0; }
+
 /* NORMAL STYLES */
 
 header {
-    position: sticky;
-    top: 0;
+    /* position: sticky; */
+    /* top: 0; */
     height: var(--header-height);
-    background-color: var(--background-color);
+    background-color: var(--background-color-bright);
     z-index: var(--z-index-header);
 }
 
@@ -230,6 +233,7 @@ nav { height: 100%; }
     position: relative;
     display: flex;
     align-items: center;
+    padding: 0;
     height: calc(100vh - var(--header-height));
     background-image: url("../images/background.jpg");
     background-repeat: no-repeat;
@@ -258,10 +262,10 @@ nav { height: 100%; }
     margin-left: 175px;
 }
 
-.hero__heading { color: var(--background-color); }
+.hero__heading { color: var(--background-color-bright); }
 
 .hero__text {
-    color: var(--background-color);
+    color: var(--background-color-bright);
     width: 70%;
     margin: 30px 0;
 }
@@ -270,15 +274,36 @@ nav { height: 100%; }
 #hero .btn--bordered { margin-left: 30px; }
 
 #intro {
-
+    display: flex;
+    justify-content: center; 
+    background-color: var(--background-color-bright);
 }
 
-.intro__heading {
-    background-color: var(--background-color);
+.intro__content { 
+    max-width: 1200px;
+    margin: 0 25px;
 }
 
-.intro__text {
+.intro__flex-box {
+    display: flex;
+    gap: 150px;
+}
 
+.intro__heading { color: var(--primary-color); }
+
+#quote {
+    position: relative;
+    background-image: url("../images/background.jpg");
+}
+
+#quote::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 0.5 */
 }
 
 /* FOR JAVASCRIPT */
@@ -310,7 +335,7 @@ nav { height: 100%; }
         width: 100%;
         height: auto;
         padding: 0 var(--_header-padding-horizontal) 20px var(--_header-padding-horizontal);
-        background-color: var(--background-color);
+        background-color: var(--background-color-bright);
         transition: var(--transition-nav);
     }
     
